@@ -15,7 +15,7 @@ exec java -jar lib/sonar-application-$SONAR_VERSION.jar \
   -Dldap.user.baseDn="dc=ibm,dc=com" \
   -Dldap.user.realNameAttribute="cn" \
   -Dldap.user.emailAttribute="mail" \
-  -Dldap.user.request=(&(objectClass=inetOrgPerson)(uid={login})) \
+  -Dldap.user.request="(&(objectClass=inetOrgPerson)(uid={login}))" \
   -Dsonar.jdbc.username="$SONARQUBE_JDBC_USERNAME" \
   -Dsonar.jdbc.password="$SONARQUBE_JDBC_PASSWORD" \
   -Dsonar.jdbc.url="$SONARQUBE_JDBC_URL" \
