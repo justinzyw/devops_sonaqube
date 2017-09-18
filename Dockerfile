@@ -10,4 +10,6 @@ ENV SONARQUBE_HOME=/opt/sonarqube
 
 COPY run.sh $SONARQUBE_HOME/bin/
 
+RUN chmod 777 ./bin/run.sh
+
 ENTRYPOINT ["./bin/run.sh"]
