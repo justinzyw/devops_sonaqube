@@ -6,7 +6,9 @@ if [ "${1:0:1}" != '-' ]; then
   exec "$@"
 fi
 
-exec java -jar lib/sonar-application-$SONAR_VERSION.jar \
+chown -R sonarqube:sonarqube $SONARQUBE_HOME
+exec gosu sonarqube \
+  java -jar lib/sonar-application-$SONAR_VERSION.jar \
   -Dsonar.log.console=true \
   -Dsonar.security.realm="LDAP" \
   -Dldap.url="ldap://devops-ldap:389" \
