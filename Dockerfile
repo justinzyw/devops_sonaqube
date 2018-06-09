@@ -1,4 +1,4 @@
-FROM sonarqube
+FROM sonarqube:7.1
 
 ENV SONARQUBE_JDBC_USERNAME admin
 
